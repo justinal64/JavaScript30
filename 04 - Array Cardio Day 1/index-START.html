@@ -138,12 +138,14 @@
         // Sum up the instances of each of these
         const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
         // use reduce
-        const instances = data.reduce((first, next) => {
-            console.log('first,', first, ' next: ', next);
-            // if()
-            return first;
-        });
-        console.log('instances: ', instances);
+        const instances = data.reduce((array, item) => {
+            if (!array[item]) {
+                array[item] = 0
+            }
+            array[item]++;
+            return array;
+        }, {});
+        console.log('Number of instances of item', instances);
     </script>
 </body>
 
